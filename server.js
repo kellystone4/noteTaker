@@ -2,7 +2,7 @@
 var express = require("express");
 var path = require("path");
 var fs = require("fs");
-var database = require("/db/db.json");
+var database = require("./db/db.json");
 const { v4: uuidv4 } = require('uuid')
 // set up express
 var app = express();
@@ -11,9 +11,6 @@ var PORT = process.env.PORT || 3000;
 // handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// notes array
-var notes = [];
 
 // Routes/Redirects
 
@@ -27,7 +24,7 @@ app.get("/notes", function(req, res) {
 
 // api/notes display all notes
 app.get("/api/notes", function(req, res) {
-    return res.json(notes);
+    res.json(database);
   });
 
 //index.html
@@ -35,41 +32,37 @@ app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
-// api/clear clear notes!
-app.put("/api/clear", function(req, res) {
-    tables = [];
-    waitlist = [];
-    res.send("clear")
-})
 
 // post api/notes
-app.post("/api/notes", function(req, res) {
+app.post("/api/notes", function(req, res){
     var newNote = req.body;
-    if (note.length < i++) {
-        note.push(newNote);
-        res.send("Note")
-    } else {
-        waitlist.push(newNote);
-        res.send();
-    }
+    let noteID = uuidv4()
+    newNote.id = noteID;
+    database.push(newNote);
+
+    fs.writeFile("./db/db.json", JSON.stringify(database), function(err){
+    if (err) throw err;
+    res.json("true");
+    })
+
 });
 
 // api/delete/notes
-app.delete("/api/delete/:notes", function(req, res) {
-    var index = req.body.index;
-    var temp = [];
-    for (var i = 0; i < notes.length; i++) {
-        if (i !== parseInt(index)) {
-          temp.push(notes[i]);
+app.delete("/api/notes/:id", function(req, res) {
+    var id = req.params.id;
+    for (var i = 0; i < database.length; i++) {
+        if (database[i].id === id) {
+          database.splice(i);
         }
     }
-    notes = temp;
-    res.send("note removed")
+    fs.writeFile("./db/db.json", JSON.stringify(database), function(err){
+        if (err) throw err;
+       res.json("true");
 })
-
+});
 
 
 // start server
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT)
-})
+});
