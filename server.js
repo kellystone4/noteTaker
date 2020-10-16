@@ -52,7 +52,7 @@ app.delete("/api/notes/:id", function(req, res) {
     var id = req.params.id;
     for (var i = 0; i < database.length; i++) {
         if (database[i].id === id) {
-          database.splice(i);
+          database.splice(i,1);
         }
     }
     fs.writeFile("./db/db.json", JSON.stringify(database), function(err){
