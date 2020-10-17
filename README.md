@@ -19,7 +19,7 @@
 <br>
 
 
-Through this assignment, I learned alot of things that go into creating the backend of a web application. 
+Through this assignment, I learned alot of things that go into creating the backend of a web application. It has been harder to master than the front end, but I believe that over time it will become more second nature. I really like the practicality of it, and how there are so many ways to solve each problem.
 
 <br>
 
@@ -33,11 +33,10 @@ Within this file, I included:
 
 ```
 1. Functional deployed application
-2. Consistent navbar on each page 
-3. Navbar with links attached     
-4. Usage of semantic html/css     
-5. Utilization of Bootstrap       
-6. Personalized information       
+2. Express
+3. Javascript     
+4. Node.js     
+     
  ```
 
 </center>
@@ -53,23 +52,9 @@ Within this file, I included:
 
 <br>
 
-- Figuring out how to push the About Me, Portfolio and Contact over to the right side while keeping the rest to the left
+- Figuring out how to correctly organize and utlitize the backend.
 
-    -  I solved this issue by putting the section with my name in it's own class so that my ml-auto code was only affecting the elements I wanted to move over to the left hand side of the header.
-
-- Making the text wrap around my "About Me" image. This was probably the issue that was the most frustrating to fix. 
-
-    - To fix this, I realized all I needed was to add a simple 'float' to my image. This would make the text wrap around the image. Then, I added a margin to add space between my image and text. Below is an image of how it looked before and after I wrapped the text around the image (along with several other changes).
-    
-    <br>
-
-    ![Image](https://i.ibb.co/89Vc0xQ/screen-shot-2020-09-15-at-9-38-32-pm.png)
-
-    <br>
-
-    ![Image](https://i.ibb.co/KNKzsdV/Screen-Shot-2020-09-16-at-9-31-16-PM.png)
-<br>
-
+    -  Getting help from TAs definitely made a huge differece, and the postioning of each function was extremely imortant to figure out.
 <br>
 
 ## Technologies Used:
@@ -78,6 +63,7 @@ Within this file, I included:
 - Gitlab
 - Terminal
 - Github
+- Heroku
 
 <br>
 
@@ -91,10 +77,10 @@ Within this file, I included:
 
 ## Links:
 
-- [Link to Github](https://github.com/kellystone4)
+- [Link to Github](https://github.com/kellystone4/noteTaker)
 - [Link to LinkedIn](https://www.linkedin.com/in/kelly-a-stone/)
 
 <br>
 
 ## Deployed Link:
-- [Link to Portfolio Site](https://kellystone4.github.io/portfolioproject/)
+- [Link to Portfolio Site](https://kellystone4.github.io/noteTaker/)
