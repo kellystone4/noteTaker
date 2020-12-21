@@ -83,4 +83,4 @@ Within this file, I included:
 <br>
 
 ## Deployed Link:
-- [Link to Portfolio Site](https://dashboard.heroku.com/apps/mighty-beyond-81582)
+- [Link to Note Taker](https://mighty-beyond-81582.herokuapp.com/)
